@@ -1,0 +1,26 @@
+
+
+Intro
+  - Why Node.js Streams?
+    - Show spotify clone
+    - Show gdrive clone
+
+
+What are Node.js Streams?
+  - on demand Processing data 
+    - show reading file in memory vs on-demand
+  
+  - categories
+    - Readable
+    - Writable
+    - Transform
+  
+  - use cases
+    - file handling
+      - gdrive 
+
+    - audio processing
+      - show editing audio in almost real time
+      - show exchanging data
+      - show backpressure
+    - video processing 
