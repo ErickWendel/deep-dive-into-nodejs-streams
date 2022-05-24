@@ -2,8 +2,12 @@ import https from 'https'
 import http from 'http'
 
 import fs from 'fs'
-import { logger } from './logger.js'
-import { Server } from 'socket.io'
+import {
+    logger
+} from './logger.js'
+import {
+    Server
+} from 'socket.io'
 import Routes from './routes.js'
 
 const PORT = process.env.PORT || 3000
@@ -38,9 +42,19 @@ routes.setSocketInstance(io)
 io.on("connection", (socket) => logger.info(`someone connected: ${socket.id}`))
 
 const startServer = () => {
-    const { address, port } = server.address()
+    const {
+        address,
+        port
+    } = server.address()
     const protocol = isProduction ? "http" : "https"
     logger.info(`app running at ${protocol}://${address}:${port}`)
 }
 
-server.listen(PORT, startServer)
+server.listen(PORT, startServer);
+
+
+['uncaughtException', 'unhandledRejection']
+.forEach(event =>
+    process.on(event, (error) =>
+        logger.error(`[${event}] something has happened: ${error.stack}`))
+)

@@ -3,7 +3,7 @@ import ConnectionManager from "./src/connectionManager.js";
 import DragAndDropManager from "./src/dragAndDropManager.js";
 import ViewManager from "./src/viewManager.js";
 
-const API_URL = "http://localhost:3000"
+const API_URL = "https://127.0.0.1:3000"
 // const API_URL = "https://gdrive-webapi-ew.herokuapp.com/"
 
 const appController = new AppController({
